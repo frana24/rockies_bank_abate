@@ -1,0 +1,24 @@
+// color
+$primarycolor: blue;
+
+// font
+$mainfont: 'Poppins', sans-serif;
+
+// social media
+$socialmedia: (
+    facebook: #3b5998,
+    instagram:#3f729b,
+    twitter: #00acee,
+    whatsapp: #25d366,
+);
+
+@each $red_social, $color in $socialmedia {
+    .btn--#{red-social} {
+        background-color: $color;
+    }
+}
+/* mixin */
+@mixin size-btn {
+    height: 80px;
+    width: 10px;
+} 

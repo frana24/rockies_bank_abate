@@ -1,0 +1,169 @@
+// body
+
+body {
+    background-color: grey;
+    padding: 10px;
+    font-family: $mainfont;
+}
+
+// header
+
+.content-cabecera {
+    width: 100%;
+    margin-top: 100px;
+    text-align: center;
+}
+
+.content-logo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid white;
+    margin: auto;
+}
+
+.content-logo img {
+    width: 100%;
+    height: 100%;
+}
+
+
+.content-cabecera h1 {
+    color: white;
+    margin-top: 20px;
+}
+
+.content-cabecera p {
+    margin-top: 40px;
+    color: white;
+}
+
+// main
+
+main{
+    background-color: white;
+    padding: 20px;
+}
+
+.content1 {
+    width: 100%;
+}
+
+.img-content1 {
+    text-align: center;
+}
+
+.img-content1 img {
+    width: 100%;
+    text-align: center;
+}
+
+.text-content1{
+    width: 100%;
+    text-align: center;
+}
+
+.text-content1 h1 {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.text-content1 hr {
+    width: 70%;
+    margin: 20px auto;
+    background-color: black;
+}
+
+.text-content1 p{
+    margin-top: 40px;
+    color: black;
+}
+
+.button-read {
+    width: 200px;
+    padding: 16px;
+    border: 1px solid brown;
+    margin: auto;
+    margin-top: 40px;
+}
+
+// footer
+
+.foot {
+    width: 100%;
+}
+
+.part_one {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    grid-gap: 30px;
+    padding: 35px 0px;
+}
+
+.box {
+    text-align: center;
+}
+
+.box figure {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box figure img {
+    width: 70%;
+    border-radius: 50%;
+}
+
+.box h2 {
+    margin-bottom: 25px;
+    font-size: 20px;
+}
+
+.box p {
+    margin-bottom: 10px;
+}
+
+.social-media a {
+    width: 45px;
+    height: 45px;
+    margin-right: 10px;
+}
+
+.part_two {
+    width: 100%;
+    background-color: brown;
+    padding: 15px 10px;
+    margin-bottom: 70px;
+    text-align: center;
+    color: white;
+}
+
+.part_two h4 {
+    font-size: 10px;
+}
+
+.icon-facebook2 {
+    color: map-get($map: $socialmedia, $key: 'facebook');
+    @include size-btn();
+}
+.icon-instagram {
+    color: map-get($map: $socialmedia, $key: 'instagram');
+    @include size-btn();
+}
+.icon-twitter {
+    color: map-get($map: $socialmedia, $key: 'twitter');
+    @include size-btn();
+}
+.icon-whatsapp {
+    color: map-get($map: $socialmedia, $key: 'whatsapp');
+    @include size-btn();
+}
+
+

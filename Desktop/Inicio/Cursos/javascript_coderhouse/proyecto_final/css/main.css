@@ -1,0 +1,222 @@
+@charset "UTF-8";
+/* abstracts */
+.btn--red-social {
+  background-color: #3b5998;
+}
+
+.btn--red-social {
+  background-color: #3f729b;
+}
+
+.btn--red-social {
+  background-color: #00acee;
+}
+
+.btn--red-social {
+  background-color: #25d366;
+}
+
+/* mixin */
+/* base */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+body {
+  background-color: grey;
+  padding: 10px;
+  font-family: "Poppins", sans-serif;
+}
+
+.content-cabecera {
+  width: 100%;
+  margin-top: 100px;
+  text-align: center;
+}
+
+.content-logo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid white;
+  margin: auto;
+}
+
+.content-logo img {
+  width: 100%;
+  height: 100%;
+}
+
+.content-cabecera h1 {
+  color: white;
+  margin-top: 20px;
+}
+
+.content-cabecera p {
+  margin-top: 40px;
+  color: white;
+}
+
+main {
+  background-color: white;
+  padding: 20px;
+}
+
+.content1 {
+  width: 100%;
+}
+
+.img-content1 {
+  text-align: center;
+}
+
+.img-content1 img {
+  width: 100%;
+  text-align: center;
+}
+
+.text-content1 {
+  width: 100%;
+  text-align: center;
+}
+
+.text-content1 h1 {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.text-content1 hr {
+  width: 70%;
+  margin: 20px auto;
+  background-color: black;
+}
+
+.text-content1 p {
+  margin-top: 40px;
+  color: black;
+}
+
+.button-read {
+  width: 200px;
+  padding: 16px;
+  border: 1px solid brown;
+  margin: auto;
+  margin-top: 40px;
+}
+
+.foot {
+  width: 100%;
+}
+
+.part_one {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: 30px;
+  padding: 35px 0px;
+}
+
+.box {
+  text-align: center;
+}
+
+.box figure {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box figure img {
+  width: 70%;
+  border-radius: 50%;
+}
+
+.box h2 {
+  margin-bottom: 25px;
+  font-size: 20px;
+}
+
+.box p {
+  margin-bottom: 10px;
+}
+
+.social-media a {
+  width: 45px;
+  height: 45px;
+  margin-right: 10px;
+}
+
+.part_two {
+  width: 100%;
+  background-color: brown;
+  padding: 15px 10px;
+  margin-bottom: 70px;
+  text-align: center;
+  color: white;
+}
+
+.part_two h4 {
+  font-size: 10px;
+}
+
+.icon-facebook2 {
+  color: #3b5998;
+  height: 80px;
+  width: 10px;
+}
+
+.icon-instagram {
+  color: #3f729b;
+  height: 80px;
+  width: 10px;
+}
+
+.icon-twitter {
+  color: #00acee;
+  height: 80px;
+  width: 10px;
+}
+
+.icon-whatsapp {
+  color: #25d366;
+  height: 80px;
+  width: 10px;
+}
+
+/* medias queries */
+/* Tamaño para pc */
+@media screen and (min-width: 1200px) {
+  .part_one {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 30px;
+    padding: 35px 0px;
+  }
+  .part_two {
+    margin-bottom: 20px;
+  }
+}
+/* Tamaño para tablet */
+@media screen and (min-width: 992px) {
+  .part_one {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 30px;
+    padding: 35px 0px;
+  }
+  .part_two {
+    margin-bottom: 20px;
+  }
+}
