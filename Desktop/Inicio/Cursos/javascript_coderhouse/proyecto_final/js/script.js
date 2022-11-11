@@ -1,160 +1,4 @@
-// let user = prompt ("Enter your username: ");
-
-
-// let passSaved = "fran";
-
-
-// function login() {
-//     let enter = false;
-
-//     for (let i=3; i>0 ; i--) {
-//         let passUser = prompt ("Enter your password: ");
-//         if (passSaved === passUser) {
-//             alert ('Hi' + " " + user + ' ' + 'Welcome to RockiesBank!')
-//             enter = true;
-//             break;
-//         }
-//         else {
-//             alert ("You enter a wrong password.");
-//         }
-
-//     }
-//     return enter;
-// }
-
-
-
-// if (login ()){
-
-//     let score = parseInt (450);
-
-//     let option = prompt ("Choose the loan you are interested in: \n1 - Personal Loan \n2 - Mortgage Loan \nPress x to return to homepage");
-
-//     while (option !="X" && option !="x"){
-//         switch (option) {
-//             case "1":
-//                 if (score >= 400){
-//                     alert ("You are eligible to apply for a Personal Loan, please present yourself in the bank with your id.");
-//                 }else {
-//                     alert ("You do not have enough score to apply for a Personal Loan")
-//                 }
-//                 break;
-//             case "2":
-//                 if (score >= 500){
-//                     alert ("You are eligible to apply for a Mortgage Loan, please present yourself in the bank with your id.");
-//                 }else {
-//                     alert ("You do not have enough score to apply for a Mortgage Loan")
-//                 }
-//                 break;
-//             default:
-//                 alert ("You choose a wrong option")
-//                 break;
-//         }
-//         option = prompt ("Choose the loan you are interested in: \n1 - Personal Loan \n2 - Mortgage Loan \nPress x to return to homepage");
-
-//     }
-// }    
-// else {
-//         alert("Your account has been blocked");
-//     }
-
-
-
-// alert ("Thank you for choosing Rockies Bank!");
-
-// alert ("Next, you will have the possibility to see the different alternatives available depending on the sector for which you receive your salary");
-
-// class alternative{
-//     constructor(sector,months,loan,id){
-//         this.sector = sector;
-//         this.months = parseInt(months);
-//         this.loan = loan;
-//         this.id = id;
-//     }
-//     asignarId(array){
-//         this.id = array.lenght;
-//     }
-// }
-
-// const loans =[
-//     new alternative('Anses one year', 12, 'Personal',1),
-//     new alternative('Anses two years', 24, 'Personal',2),
-//     new alternative('Anses three years', 36, 'Mortgage',3),
-//     new alternative('Anses four years', 48, 'Mortgage',4),
-//     new alternative('Private Sector one year', 12, 'Personal',5),
-//     new alternative('Private Sector two years', 24, 'Personal',6),
-//     new alternative('Private Sector three years', 36, 'Mortgage',7),
-//     new alternative('Public Sector one year', 12, 'Personal',8),
-//     new alternative('Public Sector two years', 24, 'Personal',9),
-//     new alternative('Public Sector three years', 36, 'Mortgage',10),
-//     new alternative('Public Sector four years', 48, 'Mortgage',11),
-//     new alternative('Public Sector five years', 60, 'Mortgage',12),
-//     new alternative('IPS one year', 12, 'Personal',13),
-//     new alternative('IPS two years', 24, 'Personal',14),
-//     new alternative('IPS three years', 36, 'Mortgage',15),
-//     new alternative('IPS four years', 48, 'Mortgage',16)
-// ]
-
-// console.log (loans);
-
-// let proceed = true;
-
-// while (proceed) {
-//     let enter = prompt ("Please enter the name of the sector you belong to where you receive your income, the number of months you wish to apply for the loan and the type of loan, separated by (/). Enter x to finish");
-
-//     if (enter.toUpperCase ()== 'X'){
-//         proceed = false;
-//         break;
-//     }
-
-//     let data= enter.split('/');
-
-//     const Alternative = new alternative (data[0],data[1],data[2]);
-//     loans.push (Alternative);
-//     Alternative.asignarId(loans);
-//     console.log (loans);    
-
-// }
-
-// let criterio = prompt('Choose the criteria you want to see the available loans:\n1 - Sector (A to Z) \n2 - Number of months');
-
-// function ordenar(criterio, array) {
-//     let arrayOrdenado = array.slice(0);
-
-
-//     switch (criterio) {
-//         case '1':
-//             return arrayOrdenado.sort((a, b) => a.sector - b.sector);
-//         case '2':
-//             return arrayOrdenado.sort((a, b) => a.months - b.months);
-//         default:
-//             alert('You entered an incorrect option');
-//             break;
-//     }
-// }
-
-// function crearStringResultado(array){
-//     let info = '';
-
-//     array.forEach(elemento=>{
-//         info += 'Sector: ' + elemento.sector + '\nMonths: ' + elemento.months + '\nType of loan: ' + elemento.loan + '\n\n'
-//     })
-
-//     return info;
-// }
-
-// alert(crearStringResultado(ordenar(criterio,loans)));
-
-// let sectorChoose = prompt ('Write the sector you want to be displayed');
-
-// const filter = loans.filter ((alternative)=>alternative.sector.toLowerCase().includes(sectorChoose.toLowerCase()))
-
-// if (filter.lenght==0){
-//     alert ('We are sorry. We do not have that sector in the system');
-// }else{
-//     const show=filter.map((alternative)=>alternative.sector)
-//     alert('The sector that matches what is requested is:\n-'+ show.join('\n- '));
-// }
+// users
 
 const users = [{
     nombre: 'Jessica',
@@ -303,4 +147,164 @@ btnLogout.addEventListener('click', () => {
 });
 
 window.onload = () => isLoged(recoverUsuario(localStorage));
+
+
+
+// convertor
+const APIKEY = '81ea9635ac434f8442e2d309';
+
+const desplegable = document.querySelectorAll('form select'),
+    monedaInicial = document.querySelector('#inicial select'),
+    monedaFinal = document.querySelector('#monedaFinal'),
+    btnConvertir = document.querySelector('#btnConversion'),
+    monto = document.querySelector('#monto'),
+    conversionTxt = document.querySelector('#conversionTxt'),
+    btnInvertirMoneda = document.querySelector('#icono');
+
+const crearSelectsMonedas = async () => {
+    const respuesta = await fetch('../json/data.json');
+    const dataJson = await respuesta.json();
+
+    desplegable.forEach((element, index) => {
+        for (const item of dataJson) {
+            let monedaPredet = (index == 0) ? ((item.moneda == 'ARS') ? 'selected' : '') : ((item.moneda == 'USD') ? 'selected' : '');
+            let optionHTML = `<option value="${item.moneda}" ${monedaPredet}>${item.moneda}</option>`;
+            element.insertAdjacentHTML('beforeend', optionHTML);
+
+        }
+
+        element.addEventListener('change', e => {
+            mostrarBandera(e.target);
+        })
+    });
+}
+
+crearSelectsMonedas();
+
+const mostrarBandera = async (element) => {
+    const respuesta = await fetch('../json/data.json');
+    const dataJson = await respuesta.json();
+
+    for (const item of dataJson) {
+        if (item.moneda == element.value) {
+            let imagen = element.parentElement.querySelector('img');
+            imagen.src = `https://www.countryflagsapi.com/png/${item.pais}`;
+        }
+
+    }
+}
+
+function obtenerTasaCambio() {
+    let montoVal = monto.value;
+    if (montoVal == '' || montoVal == '0') {
+        monto.value = '1';
+        montoVal = 1;
+    }
+
+    conversionTxt.innerText = 'Getting information...';
+
+
+    const URL = `https://v6.exchangerate-api.com/v6/${APIKEY}/latest/${monedaInicial.value}`;
+
+
+
+    fetch(URL)
+        .then(response => response.json())
+        .then(result => {
+            console.log(result.conversion_rates);
+            let tasaConversion = result.conversion_rates[monedaFinal.value];
+            let resultado = (montoVal * tasaConversion).toFixed(2);
+            conversionTxt.innerText = `${montoVal} ${monedaInicial.value} = ${resultado} ${monedaFinal.value}`;
+        }).catch(() => {
+            conversionTxt.innerText = 'Something went wrong';
+        });
+}
+
+async function cambiar() {
+    let montoVal = monto.value;
+    if (montoVal == '' || montoVal == '0') {
+        monto.value = '1';
+        montoVal = 1;
+    }
+    conversionTxt.innerText = 'Getting information...';
+    const URL = `https://v6.exchangerate-api.com/v6/${APIKEY}/latest/${monedaInicial.value}`;
+
+    try {
+        const respuesta = await fetch(URL);
+        const data = await respuesta.json();
+        let tasaConversion = data.conversion_rates[monedaFinal.value];
+        let resultado = (montoVal * tasaConversion).toFixed(2);
+        conversionTxt.innerText = `${montoVal} ${monedaInicial.value} = ${resultado} ${monedaFinal.value}`;
+
+    } catch (e) {
+        conversionTxt.innerText = 'Something went wrong';
+
+    }
+
+}
+
+
+window.onload = () => {
+
+    cambiar();
+}
+
+btnConvertir.addEventListener('click', (e) => {
+    e.preventDefault();
+    cambiar();
+})
+
+btnInvertirMoneda.addEventListener('click', () => {
+    let temp = monedaInicial.value;
+    monedaInicial.value = monedaFinal.value;
+    monedaFinal.value = temp;
+    mostrarBandera(monedaInicial);
+    mostrarBandera(monedaFinal);
+    cambiar();
+})
+
+// prestamo
+
+function gen_table(){
+    document.getElementById("tab").innerHTML="";
+    let n=Number(document.getElementById("capital").value);
+    let n2=Number(document.getElementById("couta").value);
+    let n3=Number(document.getElementById("interes").value);
+    if(n>0){   
+        for(i=1;i<=n2;i++){
+            ca=n/n2;
+            d1=ca.toFixed(2);
+            i2=((n*n3)/100)/n2;
+            d2=i2.toFixed(2);
+            r=ca+i2;
+            d3=r.toFixed(2);
+            document.getElementById("tab").innerHTML=document.getElementById("tab").innerHTML+
+                    `<tr>
+                        <td> ${i}</td>
+                        <td> ${d1}</td>
+                        <td> ${d2}</td>
+                        <td> ${d3}</td>
+                    </tr>`;
+        }
+        n1=n.toFixed(2);
+        t_i=i2*n2;
+        d4=t_i.toFixed(2);
+        t_p=r*n2;
+        d5=t_p.toFixed(2);
+        document.getElementById("t1").innerHTML=n1;
+        document.getElementById("t2").innerHTML=d4;
+        document.getElementById("t3").innerHTML=d5;        
+    }else{
+        alert("Need to enter a number");
+    }
+}
+
+
+// carga
+
+window.onload = function(){
+    let contenedor = document.getElementById('contenedor_carga');
+    contenedor.style.visibility = 'hidden';
+    contenedor.style.opacity = '0';
+}
 

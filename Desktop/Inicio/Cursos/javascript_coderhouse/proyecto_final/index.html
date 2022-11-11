@@ -33,7 +33,14 @@
     <link rel="stylesheet" href="./css/main.css">
 </head>
 <body>
-    <header>
+  <!-- carga -->
+  <div id="contenedor_carga">
+    <div id="carga"></div>
+  </div>
+  <!-- fondo -->
+    <header class="fondo">
+
+
         <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
             <a class="navbar-brand" href="index.html">Rockies Bank</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -45,17 +52,14 @@
                   <a class="nav-link" href="index.html">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Get your loan</a>
+                    <a class="nav-link" href="#loan">Get your loan</a>
                   </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Traditional Investment</a>
+                  <a class="nav-link" href="#convertor">Convertor</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Who are we?</a>
+                  <a class="nav-link" href="#about_us">Who are we?</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
-                  </li>
               </ul>
             </div>
         </nav>
@@ -63,8 +67,8 @@
           <div class="content-logo">
             <img src="./images/logo.png" alt="Logo">
           </div>
-          <h1>Titulo</h1>
-          <p>Aca va a ir el parrafo</p>
+          <h1>WELCOME TO ROCKIES BANK</h1>
+          <p>At ROCKIES BANK we take care of you. That's why you can do all the paperwork from home</p>
           </div>  
         </div>
         <nav id="loginBar" class="navbar navbar-light loginBar">
@@ -83,23 +87,14 @@
     </header>
 
     <main>
+
+
       <div class="content1">
         <div class="img-content1">
           <img src="./images/virtual_bank.jpg" alt="Virual Bank">
         </div> 
-        <div class="text-content1">
-          <h1>Lorem, ipsum dolor.</h1><hr>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur rerum aliquid incidunt, iste magni qui nesciunt quo nihil facere reiciendis veniam libero dolorem dolorum!</p>
-          <div class="button-read">
-            <p>Read more</p>
-          </div>
-        </div>
       </div>
       <section id="guest" class="toggles">
-        <h2>Content for members</h2>
-        <p>If you want to see more please, Login</p>
-
-
         <div class="modal " id="modalLogin" tabindex="-1" aria-labelledby="modalLoginLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -135,6 +130,102 @@
         <div id="tarjetas" class="card-group"></div>
     </section>
 
+    <!-- convertor -->
+    <div id="convertor" class="cuadro_divisas">
+      <div class="conversor">
+          <h1 class="titulo_conversor">Currency converter</h1>
+          <div>
+              <form action="">
+                  <div class="row">
+                      <div class="banderas_group">
+                          <label for="monto" class="form-label">Enter amount </label>
+                          <input class="cantidad" type="text" id="monto" value="1">
+                      </div>
+                  </div>
+                  <div class="banderas">
+                      <div id="inicial">
+                          <label class="bandera"  id="inicial" for="monedaInicial"><img
+                                  src="https://www.countryflagsapi.com/png/ar" alt="flag"></label>
+                          <select id="monedaInicial">
+                          </select>
+                      </div>
+                      <div id="icono">
+                          <i></i>
+                      </div>
+                      <div id="final">
+                          <label class="bandera" id="final" for="monedaFinal"><img
+                                  src="https://www.countryflagsapi.com/png/us" alt="flag"></label>
+                          <select id="monedaFinal">
+
+                          </select>
+                      </div>
+                  </div>
+              </form>
+              <div id="conversionTxt">Getting information...</div>
+          </div>
+          <div>
+              <button id="btnConversion">
+                  Watch Convertion
+              </button>
+          </div>
+      </div>
+  </div>
+
+<!-- texto -->
+  <div class="text-content1">
+    <h1 id="about">Check for loan quotes today!!</h1><hr>
+    <p>
+      At ROCKIES BANK we care a lot about our customers. That is why we offer you the possibility of accessing a bank in full growth, where you can make the loan quotes that are closest to your needs as well as keep you informed about the values ​​that handle currencies from all over the world.</p>
+  </div>
+<!-- prestamo -->
+<div id="loan" class="form">
+  <fieldset>
+      <h3 class="title_loan">LOAN SIMULATOR</h3>
+      <form>
+          <div>
+              <label for="capital">AMOUNT
+                  <input type="text" placeholder="Enter amount" id="capital">
+               
+              </label>
+          </div>
+          <div>
+              <label for="couta">FEE 
+                  <input type="text" placeholder="Enter fee" id="couta">
+               
+              </label>
+          </div>
+          <div>
+              <label for="interes">INTEREST
+                  <input type="text" placeholder="Enter interest" id="interes">
+          
+              </label>
+          </div>
+      </form>
+  <button class="btn_loan" onclick="gen_table();">Result</button>
+  </fieldset>
+  <hr>
+  <table class="tab">
+      <thead>
+          <tr>
+              <td></td>
+              <td>CAPITAL</td>
+              <td>INTEREST</td>
+              <td>AMOUNT PAYABLE</td>
+          </tr>
+      </thead>
+      <tbody id="tab">
+      </tbody>
+      <tfoot>
+          <tr>
+              <td class="ft">TOTAL</td>
+              <td id="t1"></td>
+              <td id="t2"></td>
+              <td id="t3"></td>
+          </tr>
+      </tfoot>
+  </table>
+</div>
+
     </main>
 
     <footer class="foot">
@@ -146,9 +237,9 @@
             </a>
           </figure>
         </div>
-        <div class="box">
+        <div id="about_us" class="box">
           <h2>About us</h2>
-          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores adipisci itaque dignissimos officiis reprehenderit quas debitis a at aut excepturi!</p>
+          <p>We are a platform that works fast, allowing you to forget about paperwork and filling out forms. That provides a space to operate with peace of mind, where your data will be protected. Offering facilities and solutions, allowing you to request a loan from your phone or computer.</p>
         </div>
         <div class="box">
           <h2>Follow us</h2>

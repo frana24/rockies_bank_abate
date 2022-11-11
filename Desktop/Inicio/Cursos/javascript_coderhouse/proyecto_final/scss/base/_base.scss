@@ -1,11 +1,30 @@
 // body
 
 body {
-    background-color: grey;
     padding: 10px;
     font-family: $mainfont;
+    background: url("../../images/foto_fondo.jpg") no-repeat center center fixed;
+    background-size: cover;
+    opacity: 0.85;
 }
-
+// 
+.fondo img {
+    background-size: cover;
+    background-position: center center;
+    background-image: url("./images/logo.png");
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    visibility: inherit;
+    z-index: 20;
+}
+.fondo {
+    // background-image: url('../../images/foto_fondo.jpg');
+    background-size: cover;
+    background-position: center center;
+    color: black;
+}
+// 
 // header
 
 .content-cabecera {
@@ -30,13 +49,48 @@ body {
 
 
 .content-cabecera h1 {
-    color: white;
     margin-top: 20px;
 }
 
 .content-cabecera p {
     margin-top: 40px;
-    color: white;
+    font-size: 20px;
+}
+
+// carga
+
+#contenedor_carga {
+    background-color: rgba(250, 240, 245, 0.9);
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    -webkit-animation: all 1s ease;
+    -o-animation: all 1s ease;
+    animation: all 1s ease;
+    z-index: 10000;
+}
+
+#carga {
+    border: 15px solid #ccc;
+    border-top-color: #f4266a;
+    border-top-style: groove;
+    height: 100px;
+    width: 100px;
+    border-radius: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    -webkit-animation: girar 1.5s linear infinite;
+    -o-animation: girar 1.5s linear infinite;
+    animation: girar 1.5s linear infinite;
+}
+
+@keyframes girar {
+    from {transform: rotate (0deg);}
+    to { transform: rotate(360deg);}
 }
 
 // main
@@ -46,6 +100,34 @@ main{
     padding: 20px;
 }
 
+#loginBar {
+    text-align: center;
+}
+.container-fluid {
+    width: 120px;
+    height: 120px;
+    margin: auto;
+}
+
+#btnModalLogin {
+    margin-left: 10px;
+}
+
+.btn-outline-primary {
+    border-color: black;
+}
+
+#btnLogout {
+    color: white;
+}
+
+.btn-outline-secondary {
+    border-color: black;
+}
+
+#nombreUsuario {
+    margin-left: 10px;
+}
 .content1 {
     width: 100%;
 }
@@ -80,21 +162,131 @@ main{
     color: black;
 }
 
-.button-read {
-    width: 200px;
+
+// convertor 
+
+.cuadro_divisas {
+    width: 250px;
     padding: 16px;
     border: 1px solid brown;
     margin: auto;
     margin-top: 40px;
 }
 
+.conversor {
+    font-size: 15px;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.cantidad {
+    width: 20%;
+}
+
+.titulo_conversor {
+    font-size: 25px;
+    margin-top: 20px;
+}
+
+.banderas_group {
+    margin-top: 5px;
+}
+
+.banderas {
+    display: flex;
+    margin-top: 15px;
+    place-items: center;
+}
+
+.bandera img {
+    width: 50%;
+}
+
+#conversionTxt {
+    margin-top: 15px;
+}
+
+#btnConversion {
+    margin-top: 15px;
+    margin-left: 10px;
+}
+
+// loan
+
+.title_loan{
+    text-align: center;
+    font-family: 'arial';
+}
+.title_loan form div label{
+    font-family: 'arial';
+    font-weight: bold;
+}
+.form{
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 80px;
+    border:  2px;
+    text-align-last: center;
+    display: block;
+}
+.btn_loan {
+    margin-left: 10px;
+}
+input{
+    width: 200px;
+    margin-bottom: 10px;
+    padding: 8px;
+    margin-right: -6px;
+    background-color: #fdfef7;
+    border: #173441 1.8px solid;
+}
+fieldset{
+    border: #173441 2px solid;
+    border-radius: 10px;
+    background-color: #d1ddbe;
+}
+button{
+    background-color: #fdfef7;
+    border: #173441 1.8px solid;
+    width: 100px;
+    font-family: 'arial';
+    font-size: 15px;  
+    border-radius: 2px;
+    padding: 10px;
+}
+
+.tab{
+    border-collapse: collapse;
+    text-align: center;
+    font-family: 'arial';
+    background-color: #fdfef7;
+    border: #173441 2px solid;
+    margin: 0 auto;
+    width: 100%;
+}
+thead{
+    border: #173441 2px solid;
+    font-weight: bold;
+}
+tr{
+    border: #173441 2px solid;
+}
+td{
+    border: #173441 2px solid;    
+}
+
 // footer
 
 .foot {
     width: 100%;
+    color: white;
 }
 
 .part_one {
+    color: black;
     width: 100%;
     max-width: 1200px;
     margin: auto;

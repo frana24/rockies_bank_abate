@@ -1,5 +1,11 @@
 /* Tamaño para pc */
 @media screen and (min-width: 1200px) {
+
+// main
+
+.form{
+    width: 50%;
+}
     
 // footer
 
@@ -17,11 +23,22 @@
     margin-bottom: 20px;
 }
 
+.cuadro_divisas {
+    width: 50%;
+}
+
 }
 
 
 /* Tamaño para tablet */
 @media screen and (min-width: 992px) {
+
+
+// main
+
+.form{
+    width: 50%;
+}
 
 // footer
 
@@ -35,5 +52,9 @@
 
 .part_two {
     margin-bottom: 20px;
+}
+
+.cuadro_divisas {
+    width: 50%;
 }
 }
